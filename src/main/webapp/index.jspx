@@ -1,0 +1,109 @@
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0" >
+<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat" />
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
+<c:set var="ciutat" />
+
+<spring:message code="home" var="home" />
+<spring:message code="inici" var="inici" />
+<spring:message code="carrusel1_titol" var="carrusel1_titol" />
+<spring:message code="carrusel1_desc" var="carrusel1_desc" />
+<spring:message code="carrusel2_titol" var="carrusel2_titol" />
+<spring:message code="carrusel2_desc" var="carrusel2_desc" />
+<spring:message code="carrusel1_titol" var="carrusel3_titol" />
+<spring:message code="carrusel3_desc" var="carrusel3_desc" />
+<spring:message code="botigues" var="botigues" scope="page" />
+
+<!-- *********************************************************************************************** -->
+<div id="content">
+<div class="container">
+<div id="index">
+
+<!-- *********************************************************************************************** -->
+<div id="the-breadcrumb">
+	<ul class="breadcrumb">
+		<li>${home}<span class="divider">/</span></li>
+		<li><i class="icon-home"><jsp:text /></i>${inici}</li>
+	</ul>
+</div>
+		
+<!-- *********************************************************************************************** -->
+<div id="myCarousel" class="carousel slide">
+
+	<ol class="carousel-indicators">
+    	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    	<li data-target="#myCarousel" data-slide-to="1"></li>
+    	<li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+    	<div class="active item">
+			<img alt="" src="${path}/img/carrusel/carrusel1.jpg" />
+			<div class="carousel-caption">
+				<h4>${carrusel1_titol}</h4><p>${carrusel1_desc}</p>
+			</div>
+    	</div>
+    	<div class="item">
+			<img alt="" src="${path}/img/carrusel/carrusel2.jpg" />
+			<div class="carousel-caption">
+				<h4>${carrusel2_titol}</h4><p>${carrusel2_desc}</p>
+			</div>
+		</div>
+		<div class="item">
+			<img alt="" src="${path}/img/carrusel/carrusel3.jpg" />
+			<div class="carousel-caption">
+				<h4>${carrusel3_titol}</h4><p>${carrusel3_desc}</p>
+			</div>
+		</div>
+    </div>
+
+	<a data-slide="prev" href="#myCarousel" class="left carousel-control"><![CDATA[&lsaquo;]]></a>
+	<a data-slide="next" href="#myCarousel" class="right carousel-control"><![CDATA[&rsaquo;]]></a>
+
+</div>
+<hr />
+
+<!-- *********************************************************************************************** -->
+<div class="row">
+
+	<div class="span7">
+		<div id="map_canvas" ><jsp:text/></div>
+	</div>
+
+	<div class="span5">
+
+		<c:set var="addressClass" />
+		<c:forEach items="${applicationScope.botigues}" var="botiga" varStatus="i">
+			<c:if test="${i.index==1}"><c:set var="addressClass" value="hide" /></c:if>
+			<address class="${addressClass}">
+				<span id="botiga${i.index}"><strong>Dogphone ${botiga.nom}</strong></span><br />
+				<span id="adressa${i.index}">${botiga.adressa}</span>
+				<abbr title="Telèfon"><br />P:</abbr><![CDATA[&nbsp;]]>
+				<span id="telefon${i.index}">${botiga.telefon}</span>
+			</address>
+		</c:forEach>
+
+		<h4>${botigues}</h4>
+		<dl class="dl-horizontal">
+			<c:forEach items="${applicationScope.botigues}" var="botiga" varStatus="i">
+				<c:if test="${botiga.ciutat ne ciutat}">
+					<c:set var="ciutat" value="${botiga.ciutat}" />
+	    	        <dt class="botigues">${botiga.ciutat}</dt>
+				</c:if>
+			<!-- objecte JSON enviat des del servidor -->
+				<dd><a class="gmapping">${botiga.nom}</a></dd>
+			</c:forEach>
+		</dl>
+	</div>
+
+</div>
+
+<!-- *********************************************************************************************** -->
+</div>
+</div>
+</div>
+
+</jsp:root>

@@ -1,0 +1,46 @@
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0" >
+<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat" />
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
+
+<spring:message code="home" var="home" />
+<spring:message code="terminals" var="terminals" scope="page" /><!-- evitem conflictes amb el applicationScope.terminals -->
+
+<!-- *********************************************************************************************** -->
+<div id="content">
+<div class="container">
+<div id="terminals">
+
+<!-- *********************************************************************************************** -->
+<div id="the-breadcrumb">
+	<ul class="breadcrumb">
+		<li>${home}<span class="divider">/</span></li>
+		<li>${terminals}</li>
+	</ul>
+</div>
+		
+<!-- *********************************************************************************************** -->
+<ul class="thumbnails">
+<c:forEach items="${applicationScope.terminals}" var="terminal" varStatus="i">
+   	<li class="span3">
+		<div class="thumbnail">
+  		<img alt="XXXx250" src="${path}/img/terminals/${terminal.imatge}" />
+			<div class="caption">
+				<h3>${terminal.nom}</h3>
+				<p>${terminal.descripcio}</p>
+			</div>
+		</div>
+	</li>
+</c:forEach>
+</ul>
+
+
+<!-- *********************************************************************************************** -->
+</div>
+</div>
+</div>
+ 
+ </jsp:root>
