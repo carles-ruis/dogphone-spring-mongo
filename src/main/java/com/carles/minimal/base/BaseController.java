@@ -24,7 +24,6 @@ protected String getMessage(String key, Locale locale) {
 
 protected String getMessage(String key, Locale locale, String... args) {
 	return messageSource.getMessage(key, args, null, locale);
-//	return messageSource.getMessage(key, args, null, Locale.getDefault());
 }
 /*- ***************************************************************************** */
 /*- ***** GETTERS I SETTERS ***** */

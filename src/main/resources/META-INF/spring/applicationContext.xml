@@ -8,13 +8,11 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd" >
 
 <!-- *********************************************************************************************** -->
-
 <!-- spring managed -->
-<context:spring-configured />
+<!-- <context:spring-configured /> -->
 <context:component-scan base-package="com.carles.minimal">
 	<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation" />
 </context:component-scan>
-
 
 <!-- i18n -->
 <bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource"

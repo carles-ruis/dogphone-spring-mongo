@@ -26,7 +26,7 @@ public class ResourcesController extends BaseController {
 
 private List<Botiga> botigues = new ArrayList<Botiga>();
 private List<Terminal> terminals = new ArrayList<Terminal>();
-private static final int TERMINALS_PER_PAGE = 4;
+private static final double TERMINALS_PER_PAGE = 4.0d;
 private int totalPages = 0;
 
 /*- ***************************************************************************** */
@@ -42,7 +42,7 @@ public void loadBotigues() {
 @PostConstruct
 public void loadTerminals() {
 	terminals = terminalRepo.find().asList();
-	totalPages = (int)Math.ceil( terminals.size() / TERMINALS_PER_PAGE );
+	totalPages = (int)Math.ceil( (double)terminals.size() / TERMINALS_PER_PAGE );
 	context.setAttribute("totalPages", totalPages);
 	context.setAttribute("terminalsPerPage", TERMINALS_PER_PAGE);
 	context.setAttribute("terminals", terminals);

@@ -166,7 +166,7 @@ function bind_modals() {
 /* ALTERNATIVA 3 - CREAR MARKERS A PARTIR D'OBJECTES JSON ENVIATS DES DEL SERVIDOR */
 /* http://jquery-ui-map.googlecode.com/svn/trunk/demos/jquery-google-maps-json.html */
 function bind_gmap(event, map) {
-	if ( $("#map_canvas").exists()==false ) return;
+	if ( $("#index").exists()==false ) return;
 	
 	$.each( botigues, function(i, botiga) {
 		var element = $("a.gmapping").eq(i);
@@ -249,7 +249,7 @@ function show_terminals_page() {
 /* *************************************************************************************** */
 /* ************** Accessoris . Sidebar ************** */
 function bind_accessoris_sidebar() {
-	if ( $("a.ajax-accessoris").exists()==false ) { return; }
+	if ( $("#accessoris").exists()==false ) { return; }
 	$('a.ajax-accessoris').click(function(e){
 		e.preventDefault();
 		$('nav#the-sidebar li').removeClass('active');
@@ -263,5 +263,6 @@ function bind_accessoris_sidebar() {
 /* *************************************************************************************** */
 /* ************** Popups per la pantalla de les tarifes SIM movistar ************** */
 function bind_sim_movistar_popups() {
+	if ( $("#mobil_sim").exists()==false ) { return; }
 	$(".a-popover").popover();
 }

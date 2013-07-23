@@ -41,7 +41,7 @@
 <div class="pagination pagination-centered">
 	<ul>
 		<li><a class="terminals-page-prev" href="#"><![CDATA[&laquo;]]></a></li>
-		<c:forEach begin="1" end="${terminalsPerPage}" varStatus="i">
+		<c:forEach begin="1" end="${totalPages}" varStatus="i">
 			<li><a class="terminals-page" href="#" >${i.index}</a></li>
 		</c:forEach>
 	 	<li><a class="terminals-page-next" href="#"><![CDATA[&raquo;]]></a></li>

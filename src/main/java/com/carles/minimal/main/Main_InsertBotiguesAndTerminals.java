@@ -32,7 +32,15 @@ private static final List<Terminal> TERMINALS = Arrays.asList(
 	new Terminal("HTC Five PerLeft White",DESCRIPCIO,"huawei.jpg"),
 	new Terminal("HTC Six PerLeft White",DESCRIPCIO,"huawei.jpg"),
 	new Terminal("HTC Seven PerLeft White",DESCRIPCIO,"huawei.jpg"),
-	new Terminal("HTC Eight PerLeft White",DESCRIPCIO,"huawei.jpg") );
+	new Terminal("HTC Eight PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC Nine PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC Ten PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC Eleven PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC Twelve PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC 13 PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC 14 PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC 15 PerLeft White",DESCRIPCIO,"huawei.jpg"),
+	new Terminal("HTC 16 PerLeft White",DESCRIPCIO,"huawei.jpg") );
 
 /*- ***************************************************************************** */
 /*- ***** MAIN ***** */

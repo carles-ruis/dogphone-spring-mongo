@@ -14,22 +14,21 @@
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	<!-- ********************* -->
-	<java.version>6</java.version>
+	<java.version>1.6</java.version>
 	<spring.version>3.1.1.RELEASE</spring.version>
 	<slf4j.version>1.6.4</slf4j.version>
 	<jackson.version>1.7.9</jackson.version><!--  versions mes altes no son compatibles amb spring 3.0 -->
-	<aspectj.version>1.7.0.RC1</aspectj.version>
+<!-- 	<aspectj.version>1.7.0.RC1</aspectj.version> -->
 </properties>
 
 <!-- *********************************************************************************************** -->
 <repositories>
 	<repository>
-			<id>maven2-repository.java.net</id>
-			<name>Java.net Repository for Maven</name>
-			<url>http://download.java.net/maven/2/</url>
-			<layout>default</layout>
-		</repository>
+		<id>maven2-repository.java.net</id>
+		<name>Java.net Repository for Maven</name>
+		<url>http://download.java.net/maven/2/</url>
+		<layout>default</layout>
+	</repository>
 	<repository>
 		<id>morphia.googlecode.com</id>
 		<name>Morphia Repo at Google Code</name>
@@ -60,17 +59,18 @@
 		<artifactId>morphia</artifactId>
 		<version>0.101.0</version>
 	</dependency>
+
 	<!-- Jackson JSON Mapper -->
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-core-asl</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
 		
 	<!-- ********************* -->	
 	
@@ -101,16 +101,16 @@
 		<artifactId>slf4j-log4j12</artifactId>
 		<version>${slf4j.version}</version>
 	</dependency>
-	<dependency>
-		<groupId>org.aspectj</groupId>
-		<artifactId>aspectjrt</artifactId>
-		<version>${aspectj.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.aspectj</groupId>
-		<artifactId>aspectjweaver</artifactId>
-		<version>${aspectj.version}</version>
-	</dependency>
+<!-- 	<dependency> -->
+<!-- 		<groupId>org.aspectj</groupId> -->
+<!-- 		<artifactId>aspectjrt</artifactId> -->
+<!-- 		<version>${aspectj.version}</version> -->
+<!-- 	</dependency> -->
+<!-- 	<dependency> -->
+<!-- 		<groupId>org.aspectj</groupId> -->
+<!-- 		<artifactId>aspectjweaver</artifactId> -->
+<!-- 		<version>${aspectj.version}</version> -->
+<!-- 	</dependency> -->
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>servlet-api</artifactId>
@@ -185,57 +185,20 @@
 	</dependency>
 </dependencies>
 
-<!-- <build> -->
-<!-- <plugins> -->
-<!-- 	<plugin> -->
-<!-- 		<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 		<artifactId>maven-war-plugin</artifactId> -->
-<!-- 		<version>2.2</version> -->
-<!-- 	</plugin> -->
-<!-- 	<plugin> -->
-<!-- 		<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 		<artifactId>maven-compiler-plugin</artifactId> -->
-<!-- 		<version>2.4</version> -->
-<!-- 		<configuration> -->
-<!-- 			<source>${java.version}</source> -->
-<!-- 			<target>${java.version}</target> -->
-<!-- 			<encoding>${project.build.sourceEncoding}</encoding> -->
-<!-- 		</configuration> -->
-<!-- 	</plugin> -->
-<!-- 	<plugin> -->
-<!-- 		<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 		<artifactId>maven-resources-plugin</artifactId> -->
-<!-- 		<version>2.5</version> -->
-
-<!-- 		<configuration> -->
-<!-- 			<encoding>${project.build.sourceEncoding}</encoding> -->
-<!-- 		</configuration> -->
-<!-- 	</plugin> -->
-<!-- 	<plugin> -->
-<!-- 		<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 		<artifactId>maven-surefire-plugin</artifactId> -->
-<!-- 		<version>2.12</version> -->
-<!-- 		<configuration> -->
-<!-- 			<printSummary>false</printSummary> -->
-<!-- 			<redirectTestOutputToFile>true</redirectTestOutputToFile> -->
-<!-- 		</configuration> -->
-<!-- 	</plugin> -->
-<!-- 	<plugin> -->
-<!-- 		<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 		<artifactId>maven-assembly-plugin</artifactId> -->
-<!-- 		<version>2.3</version> -->
-<!-- 		<configuration> -->
-<!-- 			<descriptorRefs> -->
-<!-- 				<descriptorRef>jar-with-dependencies</descriptorRef> -->
-<!-- 			</descriptorRefs> -->
-<!-- 		</configuration> -->
-<!-- 	</plugin> -->
-<!-- 	<plugin> -->
-<!-- 		<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 		<artifactId>maven-deploy-plugin</artifactId> -->
-<!-- 		<version>2.7</version> -->
-<!-- 	</plugin> -->
-<!-- </plugins> -->
-<!-- </build> -->
+<!-- *********************************************************************************************** -->
+<build>
+	<finalName>dogphone-spring-mongo</finalName>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<inherited>true</inherited>
+			<configuration>
+				<source>${java.version}</source>
+				<target>${java.version}</target>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 
 </project>

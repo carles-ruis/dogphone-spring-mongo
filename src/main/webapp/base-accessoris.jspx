@@ -42,9 +42,11 @@
 
 <div id="content">
 <div class="container">
+<div id="accessoris">
 <div class="row">
 	<div class="span2"><tiles:insertAttribute name="tile-accessoris-sidebar" /></div>
 	<div class="span10"><tiles:insertAttribute name="tile-body" ignore="true" /></div>
+</div>
 </div>
 </div>
 </div>
