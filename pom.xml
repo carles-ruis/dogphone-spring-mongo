@@ -47,13 +47,12 @@
 
 <!-- *********************************************************************************************** -->
 <dependencies>
-	<!-- mongodb java driver -->
+	<!-- mongodb java driver i morphia -->
 	<dependency>
 		<groupId>org.mongodb</groupId>
 		<artifactId>mongo-java-driver</artifactId>
 		<version>2.11.0</version>
 	</dependency>
-	<!-- mongodb: morphia -->
 	<dependency>
 		<groupId>com.google.code.morphia</groupId>
 		<artifactId>morphia</artifactId>
