@@ -3,21 +3,22 @@ dogphone-spring-mongo
 
 "DOGPHONE": SpringMVC webapp i18n + MongoDB/Morphia + TBS/HTML5Boilerplate/FontAwesome
 
-Depicts a web that belongs to a mobile devices chain store.
+Example of a web-app that is supposed to belong to a mobile devices chain store.
 
 - Client side:
       - Twitter Bootstrap
       - HTML5 Boilerplate code
       - Font awesome for some icons
       - Responsive
-      - Themes : Cerulean by default
-      - JQuery
+      - CSS theme: Cerulean
+      - JQuery: Pagination, Ajax
       - GoogleMaps
-      - Ajax for loading sections
-      
+      - Sign up & login
+
 - Backend:
-      - Spring MVC
+      - Spring MVC with annotations. JSPX Tiles, EL.
       - MongoDB (database). Morphia (java library)  
       - i18n: Catalan, Spanish
-      - Login & sign up.
-      
+      - Maven
+      - JSON. Jackson library
+
